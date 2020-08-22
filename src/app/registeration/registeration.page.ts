@@ -75,8 +75,9 @@ export class RegisterationPage implements OnInit {
       let errorMessage = "";
       for (let key in errors) {
         let text = errors[key][0];
-        errorMessage += text + '<br>'
+        errorMessage += text + "<br>"
       }
+      alert(error)
       this.loadingCtrl.dismiss();
       this.presentAlert(errorMessage, "هناك خطأ")
       // alert("firstname required , lname required , password required , phone required , email required")
