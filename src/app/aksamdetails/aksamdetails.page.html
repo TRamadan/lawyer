@@ -1,0 +1,145 @@
+<ion-content>
+  <div class="half-circle">
+    <!-- here will be the logo and a title-->
+    <!-- here will be the buttons of the back button navigation and menu button-->
+  </div>
+  <div style="position: absolute;top:0; width: 100%;display: flex; justify-content: space-between;">
+    <div (click)="gotomessages()">
+      <img style="margin-top: 6px;margin-left: 12px;" src="assets/icon/bell-11.png">
+    </div>
+    <div>
+      <img style="margin-right: 5px;margin-top: 49px;" src="assets/icon/law-3.png">
+    </div>
+    <div (click)="gotomenu()">
+      <img style="margin-top: 8px;margin-right: 20px;" src="assets/icon/more-13.png">
+    </div>
+  </div>
+
+  <div class="searchBar" style="width:80%;margin:15px auto !important;">
+    <input class="searchInput" name="search" [(ngModel)]="searchName">
+  </div>
+
+  <div>
+    <div class="mahkma-section">
+      <h3 style="color:#fff;font-size: 20px;font-weight: bold;margin-left: auto;margin-right: auto;">
+        {{courts_service.name}}
+      </h3>
+    </div>
+  </div>
+
+  <ion-grid class="grid-section">
+    <ion-row class="row-section">
+      <div class="mahkma-section2">
+        <h3 style="color: #fff;font-size: 26px;font-weight: bold;margin-left: auto;
+        margin-right: auto;;">
+          موضوع الدعوى
+        </h3>
+      </div>
+      <form style="text-align: center; width:95%;">
+        <div class="firstnamediv" style="display: none;">
+          <ion-input [(ngModel)]="court" class="input" name="court" type="text" placeholder="رقم التليفون">
+          </ion-input>
+        </div>
+        <div class="firstnamediv" style="display: none;">
+          <ion-input [(ngModel)]="sub_court" class="input" name="sub_court" type="text" placeholder="رقم التليفون">
+          </ion-input>
+        </div>
+
+        <!-- <div class="firstnamediv">
+          <ion-input [(ngModel)]="phone" class="input" name="phone" type="number" placeholder="رقم التليفون">
+          </ion-input>
+        </div>
+
+        <div class="firstnamediv">
+          <ion-input [(ngModel)]="lawsuit_title" class="input" name="lawsuit_title" type="text"
+            placeholder="عنوان الدعوة">
+          </ion-input>
+        </div> -->
+
+        <div class="firstnamediv" style="margin-top: 10%;">
+          <textarea
+            style="color :#000; width: 100%;border:0;border-radius: 26px;text-align: center;margin:0px !important;height:90px !important;"
+            required class="input" [(ngModel)]="lawsuit_des" name="lawsuit_des" rows="7" cols="15"
+            placeholder="موضوع الدعوة "></textarea>
+        </div>
+
+        <div class="page-button">
+          <ion-button style="color: black;
+          margin-top: 12%;
+          font-size: larger;
+          font-weight: bolder;
+          margin-left: auto;
+          margin-right: auto;
+          width:50%;" shape="round" color="dark" (click)="SendFormData()">إرسال موضوع الدعوة</ion-button>
+        </div>
+
+        <form>
+          <ion-row>
+            <div class="rectangle" style="align-items: center;align-content: center;justify-content: space-around;margin-left: auto;
+            margin-right: auto;">
+              <div
+                style="float: right;margin-top: 25px;margin-right: 20px; align-items: center; align-content: center;">
+                <img style="width: 75px;height: 80px;" src="assets/icon/surface-2.png">
+              </div>
+              <div id="uploadImage">
+                <h6 style="font-weight: bolder;
+                  color: #996515;
+                  margin-left: 15px;
+                  margin-top: 16%;
+                  text-align: center;
+                  margin-right: auto;
+                  text-align: center;">
+                  تحميل أى أوراق أو ملفات أو صور
+                </h6>
+              </div>
+            </div>
+          </ion-row>
+
+          <input style="padding: 0px 5px !important;margin-top: 5px !important;display: none;" name="file" type="file"
+            id="uploadInput" (change)="changeListener($event.target.files)">
+          <ion-button style="
+          color: black;
+    margin-top: 8%;
+    font-size: larger;
+    font-weight: bolder;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;" shape="round" expand="block" color="dark" (click)="uploadfiles()">إرسال الملفات
+          </ion-button>
+        </form>
+
+      </form>
+
+
+
+    </ion-row>
+
+
+    <!-- <ion-row class="row-section">
+      <div class="mahkma-section2">
+        <h3 style="color: #fff;font-size: 26px;font-weight: bold;margin-left: 108px;">
+          الوقائع
+        </h3>
+      </div>
+    </ion-row> -->
+  </ion-grid>
+
+</ion-content>
+<div style="background:transparent">
+  <img (click)="goback()" class="img" src="assets/icon/left-arrow-11.png">
+</div>
+<ion-footer text-center class="footer">
+  <div class="footer-nav" style="padding:10px; display: flex; justify-content: space-around;">
+    <ion-button fill="clear" (click)="openProfile()">
+      <img src="assets/icon/account-circle.png" alt="ticket">
+    </ion-button>
+    <div class="vertical-separator"></div>
+    <ion-button fill="clear" (click)="openHome()">
+      <img src="assets/icon/home-icon-silhouette.png" alt="ticket">
+    </ion-button>
+    <div class="vertical-separator"></div>
+    <ion-button fill="clear" (click)="openTickets()">
+      <img src="assets/icon/Group%20280.png" alt="ticket">
+    </ion-button>
+  </div>
+</ion-footer>

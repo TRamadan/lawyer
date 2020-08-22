@@ -1,0 +1,69 @@
+<ion-content>
+  <div class="half-circle">
+  </div>
+  <div class="center-test">
+    <span></span>
+    <h3 style="font-weight: bolder !important;">الرسائل</h3>
+  </div>
+  <ion-grid class="grid-section">
+    <ion-row class="row-section">
+      <!-- if there is no messages for the user-->
+      <div *ngIf="!ReadyMessages" style="width: 100%;
+      margin-left: auto;
+      margin-right: 29%;
+      text-align: center;
+      position: relative;
+      margin-top: 10%;">
+        <h1 style="margin-left: auto; margin-right: auto; text-align: center;">لا يوجد رسائل </h1>
+      </div>
+      <!-- if there are messages for the user-->
+      <div *ngIf="ReadyMessages">
+        <div *ngFor="let m of Messages">
+          <div class="rectangle">
+            <img src="assets/icon/asset-11.png" class="img-class">
+            <!-- <span style="font-weight: bolder; margin-left: 10px;">المستشار : مرتضى منصور</span> -->
+            <span class="d-block" style="margin-top: 10px;">{{m.message}}</span>
+          </div>
+        </div>
+      </div>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<!-- <div class="chatbar" style="margin-bottom: 10px;height: 40px;">
+  <input class="chatbarInput" name="search">
+</div> -->
+<ion-footer text-center class="footer">
+  <div class="footer-nav" style="padding:10px; display: flex; justify-content: space-around;">
+    <ion-button fill="clear" (click)="openProfile()">
+      <img src="assets/icon/account-circle.png" alt="ticket">
+    </ion-button>
+    <div class="vertical-separator"></div>
+    <ion-button fill="clear" (click)="openHome()">
+      <img src="assets/icon/home-icon-silhouette.png" alt="ticket">
+    </ion-button>
+    <div class="vertical-separator"></div>
+    <ion-button fill="clear" (click)="openTickets()">
+      <img src="assets/icon/Group%20280.png" alt="ticket">
+    </ion-button>
+  </div>
+</ion-footer>
+
+<!-- <ion-row class="row-section">
+      <div>
+        <div class="rectangle">
+          <img src="assets/icon/asset-11.png" class="img-class">
+          <span style="font-weight: bolder; margin-left: 10px;">المستشار : مرتضى منصور</span>
+          <span class="d-block" style="margin-top:10px;">Hello</span>
+        </div>
+      </div>
+    </ion-row>
+    <ion-row class="row-section">
+      <div>
+        <div class="rectangle">
+          <img src="assets/icon/asset-11.png" class="img-class">
+          <span style="font-weight: bolder; margin-left: 10px;">المستشار : مرتضى منصور</span>
+          <span class="d-block" style="margin-top: 10px;">Hello</span>
+        </div>
+      </div>
+    </ion-row> -->

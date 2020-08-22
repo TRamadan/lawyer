@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "107493740297",
+    "firebase_url": "https://test-729c1.firebaseio.com",
+    "project_id": "test-729c1",
+    "storage_bucket": "test-729c1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:107493740297:android:ad7a2b5dced812e2d68dd8",
+        "android_client_info": {
+          "package_name": "test.ionic.yarab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "107493740297-j02e8b7791ktlii7p65nhokdp5dtdk1g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBToRrWgTXDW94RtI6zbUJS2alj5uyRYQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "107493740297-j02e8b7791ktlii7p65nhokdp5dtdk1g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,66 @@
+<ion-content>
+  <div class="half-circle">
+    <!-- here will be the logo and a title-->
+    <!-- here will be the buttons of the back button navigation and menu button-->
+  </div>
+  <div style="position: absolute;top:0; width: 100%;display: flex; justify-content: space-between;">
+    <div (click)="gotomessages()">
+      <img style="margin-top: 6px;
+              margin-left: 12px;" src="assets/icon/bell-11.png">
+    </div>
+    <div>
+      <img style="margin-right: 5px;
+              margin-top: 49px;" src="assets/icon/law-3.png">
+    </div>
+    <div (click)="gotomenu()">
+      <img style="margin-top: 8px;margin-right: 20px;" src="assets/icon/more-13.png">
+    </div>
+
+  </div>
+
+
+  <ion-grid class="grid-section">
+    <ion-row class="row-section">
+      <div class="mahkma-section2">
+        <h4
+          style="color: #fff;font-size: 26px;font-weight: bold;margin-left: auto; margin-right: auto; text-align: center;">
+          إجعل رسالتك بنائة
+        </h4>
+      </div>
+      <form style="text-align: center; width:95%;">
+
+        <div class="firstnamediv">
+          <textarea required class="input"
+            style="color :#000; width: 100%;border:0;border-radius: 21px;text-align: center;margin:0px !important;height:90px !important;"
+            [(ngModel)]="message" name="note" rows="7" cols="15" placeholder="اترك رسالتك هنا ..."></textarea>
+        </div>
+        <!-- <ion-row>
+          <div class="rectangle" style="align-items: center;align-content: center;justify-content: space-around;">
+            <div style="float: right;margin-top: 25px;margin-right: 20px; align-items: center; align-content: center;">
+              <img style="width: 75px;height: 80px;" src="assets/icon/surface-2.png">
+            </div>
+            <div (click)="uploadfiles()">
+              <h6
+                style="font-weight:bolder; color :#996515; margin-left:15px; margin-top: 54px;text-align: center; margin-left:9px">
+                تحميل أى أوراق أو ملفات أو صور
+              </h6>
+            </div>
+          </div>
+        </ion-row> -->
+        <div class="page-button">
+          <button ion-button type="submit" class="submit-button" color="login-button" round large
+            (click)="send()">إرسال</button>
+        </div>
+      </form>
+    </ion-row>
+
+
+    <!-- <ion-row class="row-section">
+    <div class="mahkma-section2">
+      <h3 style="color: #fff;font-size: 26px;font-weight: bold;margin-left: 108px;">
+        الوقائع
+      </h3>
+    </div>
+  </ion-row> -->
+  </ion-grid>
+</ion-content>

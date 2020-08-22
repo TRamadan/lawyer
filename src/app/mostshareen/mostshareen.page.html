@@ -1,0 +1,115 @@
+<ion-content>
+  <div class="half-circle">
+  </div>
+
+  <div style="position: absolute;top:0; width:100%;display: flex; justify-content: space-between;">
+    <div (click)="gotomessages()">
+      <img style="margin-top:6px;margin-left:12px;" src="assets/icon/bell-11.png">
+    </div>
+    <div>
+      <img style="margin-right:5px;margin-top:49px;" src="assets/icon/law-3.png">
+    </div>
+    <div (click)="gotomenu()">
+      <img style="margin-top:8px;margin-right:20px;" src="assets/icon/more-13.png">
+    </div>
+  </div>
+
+  <!-- <div class="searchBar" style="width:80%;margin:9px auto !important;">
+    <input class="searchInput" name="search" [(ngModel)]="searchName">
+  </div> -->
+
+  <div>
+    <div class="rating-section">
+      <h3 style=" color:#fff; 
+              font-size: 20px;
+              font-weight: bold;
+              margin-left: 78px;">
+        أسماء المستشارين
+      </h3>
+    </div>
+  </div>
+
+  <ion-grid class="grid-section">
+    <ion-row class="row-section">
+      <div *ngFor="let m of MostshareenArray;">
+        <div class="rectangle" (click)="gotodetails(m.id)">
+          <div *ngIf="!m.image">
+            <img src="assets/icon/asset-11.png" class="img-class">
+          </div>
+          <img [src]="'http://al-fayroz.com/lawer/' + m.image" class="img-class">
+          <span style="font-weight: bolder; margin-left: 33px;">المستشار : {{m.name}}</span>
+          <span class="d-block" style="margin-top:10px;"> {{m.Specialization}}</span>
+        </div>
+      </div>
+    </ion-row>
+
+    <!-- <ion-row class="row-section">
+      <div>
+        <div class="rectangle" (click)="gotodetails()">
+          <img src="assets/icon/asset-11.png" class="img-class">
+          <span style="font-weight: bolder; margin-left: 33px;">المستشار : مرتضى منصور</span>
+          <span class="d-block" style="margin-top:10px;">تخصص المستشار</span>
+        </div>
+      </div>
+    </ion-row>
+
+    <ion-row class="row-section">
+      <div>
+        <div class="rectangle" (click)="gotodetails()">
+          <img src="assets/icon/asset-11.png" class="img-class">
+          <span style="font-weight: bolder; margin-left: 33px;">المستشار : مرتضى منصور</span>
+          <span class="d-block" style="margin-top:10px;">تخصص المستشار</span>
+        </div>
+      </div>
+    </ion-row>
+
+    <ion-row class="row-section">
+      <div>
+        <div class="rectangle" (click)="gotodetails()">
+          <img src="assets/icon/asset-11.png" class="img-class">
+          <span style="font-weight: bolder; margin-left: 33px;">المستشار : مرتضى منصور</span>
+          <span class="d-block" style="margin-top:10px;">تخصص المستشار</span>
+        </div>
+      </div>
+    </ion-row>
+
+    <ion-row class="row-section">
+      <div>
+        <div class="rectangle" (click)="gotodetails()">
+          <img src="assets/icon/asset-11.png" class="img-class">
+          <span style="font-weight: bolder; margin-left: 33px;">المستشار : مرتضى منصور</span>
+          <span class="d-block" style="margin-top:10px;">تخصص المستشار</span>
+        </div>
+      </div>
+    </ion-row>
+
+    <ion-row class="row-section">
+      <div>
+        <div class="rectangle" (click)="gotodetails()">
+          <img src="assets/icon/asset-11.png" class="img-class">
+          <span style="font-weight: bolder; margin-left: 33px;">المستشار : مرتضى منصور</span>
+          <span class="d-block" style="margin-top:10px;">تخصص المستشار</span>
+        </div>
+      </div>
+    </ion-row> -->
+  </ion-grid>
+
+</ion-content>
+<div style="background:transparent">
+  <img (click)="goback()" class="img" src="assets/icon/left-arrow-11.png">
+</div>
+<ion-footer text-center class="footer">
+  <div class="footer-nav" style="padding:10px; display: flex; justify-content: space-around;">
+    <ion-button fill="clear" (click)="openProfile()">
+      <img src="assets/icon/account-circle.png" alt="ticket">
+    </ion-button>
+    <div class="vertical-separator"></div>
+    <ion-button fill="clear" (click)="openHome()">
+      <img src="assets/icon/home-icon-silhouette.png" alt="ticket">
+    </ion-button>
+    <div class="vertical-separator"></div>
+    <ion-button fill="clear" (click)="openTickets()">
+      <img src="assets/icon/Group%20280.png" alt="ticket">
+    </ion-button>
+  </div>
+</ion-footer>

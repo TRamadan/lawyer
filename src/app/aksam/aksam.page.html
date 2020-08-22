@@ -1,0 +1,145 @@
+<ion-content>
+
+  <div class="half-circle">
+    <!-- here will be the logo and a title-->
+    <!-- here will be the buttons of the back button navigation and menu button-->
+  </div>
+  <div style="position: absolute;top:0; width: 100%;display: flex; justify-content: space-between;">
+    <div (click)="gotomessages()">
+      <img style="margin-top: 6px;margin-left: 12px;" src="assets/icon/bell-11.png">
+    </div>
+    <div>
+      <img style="margin-right: 5px;margin-top: 49px;" src="assets/icon/law-3.png">
+    </div>
+    <div (click)="gotomenu()">
+      <img style="margin-top: 8px;margin-right: 20px;" src="assets/icon/more-13.png">
+    </div>
+  </div>
+
+  <div class="searchBar" style="width:80%;margin:15px auto !important;">
+    <input class="searchInput" name="search" [(ngModel)]="searchName">
+  </div>
+
+  <div>
+    <div class="mahkma-section">
+      <h3 style="color:#fff;font-size: 20px;font-weight: bold;margin-left: auto;
+      margin-right: auto;
+      text-align: center;">
+        {{courts_service.name}}
+      </h3>
+    </div>
+  </div>
+
+  <div *ngIf="!ReadyCats">
+    <h4 style="margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding-top: 26%;
+    font-size: x-large;
+    font-weight: bolder;">لا يوجد خدمات متاحة الآن</h4>
+  </div>
+  <ion-grid class="grid-section">
+    <ion-row class="row-section" *ngFor="let s of SubCourts">
+      <div class="mahkma-section2" (click)="gotodetails(s.name , s.subcourt_id)">
+        <h3
+          style="color: #fff;font-size: 26px;font-weight: bold;margin-left: auto; margin-right: auto; text-align: center;">
+          {{s.name}}
+        </h3>
+      </div>
+    </ion-row>
+
+    <!-- <ion-row class="row-section">
+      <div class="mahkma-section2">
+        <h3 style="    color: #fff;
+        font-size: 26px;
+        font-weight: bold;
+        margin-left: 108px;">
+          عمالى
+        </h3>
+      </div>
+    </ion-row>
+
+    <ion-row class="row-section">
+      <div class="mahkma-section2">
+        <h3 style="color: #fff;
+        font-size: 26px;
+        font-weight: bold;
+        margin-left: 85px;">
+          أخطاء طبية
+        </h3>
+      </div>
+    </ion-row>
+
+    <ion-row class="row-section">
+      <div class="mahkma-section2">
+        <h3 style="    color: #fff;
+        font-size: 26px;
+        font-weight: bold;
+        margin-left: 108px;">
+          تجارى
+        </h3>
+      </div>
+    </ion-row>
+
+    <ion-row class="row-section">
+      <div class="mahkma-section2">
+        <h3 style="    color: #fff;
+        font-size: 26px;
+        font-weight: bold;
+        margin-left: 65px;">
+          المحاكم الإدارية
+        </h3>
+      </div>
+    </ion-row>
+
+    <ion-row class="row-section">
+      <div class="mahkma-section2">
+        <h3 style="color: #fff;font-size: 16px;font-weight: bold;margin-left: 30px;">
+          منازعات تمويلية و مصرفية و تأمينية
+        </h3>
+      </div>
+    </ion-row>
+
+    <ion-row class="row-section">
+      <div class="mahkma-section2">
+        <h3 style="color: #fff;
+        font-size: 26px;
+        font-weight: bold;
+        margin-left: 75px;">
+          محكمة التنفيذ
+        </h3>
+      </div>
+    </ion-row>
+
+    <ion-row class="row-section">
+      <div class="mahkma-section2">
+        <h3 style="color: #fff;
+        font-size: 26px;
+        font-weight: bold;
+        margin-left: 70px;">
+          أحوال شخصية
+        </h3>
+      </div>
+    </ion-row> -->
+  </ion-grid>
+
+
+</ion-content>
+<div style="background:transparent">
+  <img (click)="goback()" class="img" src="assets/icon/left-arrow-11.png">
+</div>
+<ion-footer text-center class="footer">
+  <div class="footer-nav" style="padding:10px; display: flex; justify-content: space-around;">
+    <ion-button fill="clear" (click)="openProfile()">
+      <img src="assets/icon/account-circle.png" alt="ticket">
+    </ion-button>
+    <div class="vertical-separator"></div>
+    <ion-button fill="clear" (click)="openHome()">
+      <img src="assets/icon/home-icon-silhouette.png" alt="ticket">
+    </ion-button>
+    <div class="vertical-separator"></div>
+    <ion-button fill="clear" (click)="openTickets()">
+      <img src="assets/icon/Group%20280.png" alt="ticket">
+    </ion-button>
+  </div>
+</ion-footer>

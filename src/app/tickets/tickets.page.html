@@ -1,0 +1,76 @@
+<ion-content>
+  <div class="half-circle">
+    <!-- here will be the logo and a title-->
+    <!-- here will be the buttons of the back button navigation and menu button-->
+  </div>
+  <div style="position: absolute;top:0; width: 100%;display: flex; justify-content: space-between;">
+    <div (click)="gotomessages()">
+      <img style="margin-top: 6px;
+              margin-left: 12px;" src="assets/icon/bell-11.png">
+    </div>
+    <div>
+      <img style="margin-right: 5px;
+              margin-top: 49px;" src="assets/icon/law-3.png">
+    </div>
+    <div (click)="gotomenu()">
+      <img style="margin-top: 8px;
+                  margin-right: 20px;" src="assets/icon/more-13.png">
+    </div>
+
+  </div>
+  <ion-grid>
+    <ion-row style="float: right;">
+      <div>
+        <h6 style="font-weight: bolder; font-size: 20px; margin-right:14px"> تذاكر</h6>
+      </div>
+    </ion-row>
+  </ion-grid>
+
+  <!-- check if the length of the array is = 0 -->
+  <div *ngIf="!ReadyTickets" style="width: 100%;
+      margin-left: auto;
+      margin-right: 29%;
+      text-align: center;
+      position: relative;
+      margin-top: 44%;">
+    <h1 style="margin-left: auto; margin-right: auto; text-align: center;">لا يوجد إستشارات </h1>
+  </div>
+
+  <div class="card" *ngFor="let t of Tickets">
+    <div class="card_header">
+      <h2 style="margin-top: 0px !important; color:#fff">{{t.subcourts}}</h2>
+    </div>
+
+    <div class="card_body">
+      <div class="card_container">
+        <span class="span-class2">
+          إسم المستشار : {{t.counselor}}
+        </span>
+        <span class="span-class1">
+          معاد الحجز : {{t.date}}
+        </span>
+        <span class="span-class1">
+          الرابط : {{t.link}}
+        </span>
+      </div>
+    </div>
+  </div>
+
+
+
+</ion-content>
+<ion-footer text-center class="footer">
+  <div class="footer-nav" style="padding:10px; display: flex; justify-content: space-around;">
+    <ion-button fill="clear" (click)="openProfile()">
+      <img src="assets/icon/account-circle.png" alt="ticket">
+    </ion-button>
+    <div class="vertical-separator"></div>
+    <ion-button fill="clear" (click)="openHome()">
+      <img src="assets/icon/home-icon-silhouette.png" alt="ticket">
+    </ion-button>
+    <div class="vertical-separator"></div>
+    <ion-button fill="clear">
+      <img src="assets/icon/Group%20280.png" alt="ticket">
+    </ion-button>
+  </div>
+</ion-footer>

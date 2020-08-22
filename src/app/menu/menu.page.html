@@ -1,0 +1,58 @@
+<ion-content>
+  <div class="box">
+  </div>
+
+  <div style="position: absolute;top:0; width:100%;display: flex; justify-content: space-between;">
+    <div (click)="gotomessages()">
+      <img style="margin-top: 8px;margin-left: 38px;" src="assets/icon/bell-11.png">
+    </div>
+    <div>
+      <!-- <img style="margin-right: 144px;margin-top: 134px;width: 62px;height: 60px;" src="assets/icon/law-3.png"> -->
+    </div>
+  </div>
+  <ion-grid class="grid-section">
+    <ion-row class="row-section" style="margin-right: auto;margin-left: auto;display: block;">
+      <img style="width: 62px;height: 60px;" src="assets/icon/law-3.png">
+    </ion-row>
+    <ion-row class="row-section">
+      <ion-button class="buttons" (click)="gototickets()" fill="clear" expand="full">
+        الإستشارات السابقة
+      </ion-button>
+    </ion-row>
+
+
+    <!-- <ion-row class="row-section">
+      <ion-button class="buttons" fill="clear" expand="full">
+        الإعدادات
+      </ion-button>
+    </ion-row> -->
+
+
+    <ion-row class="row-section">
+      <ion-button class="buttons" (click)="gotoprofile()" fill="clear" expand="full">
+        حسابى
+      </ion-button>
+    </ion-row>
+
+
+    <!-- <ion-row class="row-section">
+      <ion-button class="buttons" (click)="gotoprofile()" fill="clear" expand="full">
+        تعديل الحساب
+      </ion-button>
+    </ion-row> -->
+
+    <ion-row class="row-section">
+      <ion-button (click)="logout()" class="buttons" fill="clear" expand="full">
+        تسجيل الخروج
+      </ion-button>
+    </ion-row>
+
+
+    <ion-row class="row-section" (click)="gotocontact()">
+      <ion-button class="buttons" fill="clear" expand="full">
+        إتصل بنا
+      </ion-button>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>

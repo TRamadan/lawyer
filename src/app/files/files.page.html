@@ -1,0 +1,111 @@
+<ion-content>
+  <div class="half-circle">
+    <!-- here will be the logo and a title-->
+    <!-- here will be the buttons of the back button navigation and menu button-->
+  </div>
+  <div style="position: absolute;top:0; width: 100%;display: flex; justify-content: space-between;">
+    <div (click)="gotomessages()">
+      <img style="margin-top: 6px;
+                    margin-left: 12px;" src="assets/icon/bell-11.png">
+    </div>
+    <div>
+      <img style="margin-right: 5px;
+                    margin-top: 49px;" src="assets/icon/law-3.png">
+    </div>
+    <div (click)="gotomenu()">
+      <img style="margin-top: 8px;margin-right: 20px;" src="assets/icon/more-13.png">
+    </div>
+
+  </div>
+  <!-- <div class="half-circle">
+  </div>
+  <div class="center-test">
+    <span></span>
+    <h3>ملفاتك</h3>
+  </div> -->
+  <ion-grid class="grid-section">
+    <div *ngIf="!Files" style="width: 100%;
+      margin-left: auto;
+      margin-right: 17%;
+      text-align: center;
+      position: relative;
+      margin-top: 44%;">
+      <h1 style="margin-left: auto; margin-right: auto; text-align: center;">لا يوجد ملفات </h1>
+    </div>
+    <ion-row>
+      <div class="rectangle" style="display: flex; justify-content: space-around;" *ngFor="let f of FilesArray">
+        <div style="display: flex; align-items: center; align-content: center;">
+          <img src="assets/icon/file-1.png">
+        </div>
+        <div>
+          <h4>{{f.file}}
+          </h4>
+        </div>
+      </div>
+    </ion-row>
+
+    <!-- <ion-row>
+      <div class="rectangle" style="display: flex; justify-content: space-around;">
+        <div style="display: flex; align-items: center; align-content: center;">
+          <img src="assets/icon/pdf.png">
+        </div>
+        <div>
+          <h6 style="margin-top: 5px;
+                text-align: center; margin-left:-73px">
+            text.txt
+          </h6>
+        </div>
+
+      </div>
+    </ion-row>
+
+    <ion-row>
+      <div class="rectangle" style="display: flex; justify-content: space-around;">
+        <div style="display: flex; align-items: center; align-content: center;">
+          <img src="assets/icon/txt-file.png">
+        </div>
+        <div>
+          <h6 style="margin-top: 5px;
+                text-align: center; margin-left:-73px">
+            text.txt
+          </h6>
+        </div>
+
+      </div>
+    </ion-row>
+
+    <ion-row>
+      <div class="rectangle" style="display: flex; justify-content: space-around;">
+        <div style="display: flex; align-items: center; align-content: center;">
+          <img src="assets/icon/file-1.png">
+        </div>
+        <div>
+          <h6 style="margin-top: 5px;
+                text-align: center; margin-left:-73px">
+            text.txt
+          </h6>
+        </div>
+
+      </div>
+    </ion-row> -->
+
+  </ion-grid>
+</ion-content>
+<div style="background:transparent">
+  <img (click)="goback()" class="img" src="assets/icon/left-arrow-11.png">
+</div>
+<ion-footer text-center class="footer">
+  <div class="footer-nav" style="padding:10px; display: flex; justify-content: space-around;">
+    <ion-button fill="clear" (click)="openProfile()">
+      <img src="assets/icon/account-circle.png" alt="ticket">
+    </ion-button>
+    <div class="vertical-separator"></div>
+    <ion-button fill="clear" (click)="openHome()">
+      <img src="assets/icon/home-icon-silhouette.png" alt="ticket">
+    </ion-button>
+    <div class="vertical-separator"></div>
+    <ion-button fill="clear" (click)="openTickets()">
+      <img src="assets/icon/Group%20280.png" alt="ticket">
+    </ion-button>
+  </div>
+</ion-footer>

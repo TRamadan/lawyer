@@ -1,0 +1,78 @@
+<ion-content>
+  <div class="half-circle">
+    <!-- here will be the logo and a title-->
+    <!-- here will be the buttons of the back button navigation and menu button-->
+  </div>
+  <div style="position: absolute;top:0; width: 100%;display: flex; justify-content: space-between;">
+    <!-- <div (click)="gotomessages()">
+      <button id="notification-button" ion-button clear>
+        <ion-icon name="notifications">
+          <ion-badge id="notifications-badge" color="danger">5</ion-badge>
+        </ion-icon>
+      </button>
+    </div> -->
+    <div (click)="gotomessages()" id="notification-button">
+      <img style="margin-top: 6px;
+                margin-left: 10px;" src="assets/icon/bell-11.png">
+      <!-- <ion-badge id="notifications-badge" color="danger">10</ion-badge> -->
+    </div>
+    <div>
+      <img style="margin-right: 5px;
+                margin-top: 49px;" src="assets/icon/law-3.png">
+    </div>
+    <div (click)="gotomenu()">
+      <img style="margin-top: 8px;margin-right: 20px;" src="assets/icon/more-13.png">
+    </div>
+
+  </div>
+
+  <!-- <div class="searchBar" style="width:80%;margin:15px auto !important;">
+    <input class="searchInput" name="search" [(ngModel)]="searchName">
+  </div> -->
+
+  <ion-grid class="grid-section">
+    <ion-row class="row-section">
+      <div class="mahkma-section" (click)="gotoaksam(c.id , c.name)" *ngFor="let c of CourtsArray">
+        <h3 style="margin-left: auto !important;
+        margin-right: auto !important;">
+          {{c.name}}
+        </h3>
+      </div>
+    </ion-row>
+    <!-- <ion-row class="row-section">
+      <div class="rating-section" (click)="gotomostshareen()">
+        <h3 style="margin-left: auto; margin-right: auto;">
+          أسماء المستشارين
+        </h3>
+      </div>
+    </ion-row> -->
+  </ion-grid>
+
+  <!-- <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon color="light" name="chatbubbles-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab> -->
+
+
+</ion-content>
+<ion-footer text-center class="footer">
+  <div class="footer-nav" style="padding:10px; display: flex; justify-content: space-around;">
+    <ion-button fill="clear" (click)="openProfile()">
+      <img src="assets/icon/account-circle.png" alt="ticket">
+    </ion-button>
+    <div class="vertical-separator"></div>
+    <ion-button fill="clear">
+      <img src="assets/icon/home-icon-silhouette.png" alt="ticket">
+    </ion-button>
+    <div class="vertical-separator"></div>
+
+    <div>
+      <ion-button fill="clear" (click)="openTickets()">
+        <img src="assets/icon/Group%20280.png" alt="ticket">
+        <!-- <ion-badge id="notifications-badge" color="danger">10</ion-badge> -->
+      </ion-button>
+    </div>
+
+  </div>
+</ion-footer>
